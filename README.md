@@ -186,5 +186,5 @@ or check by browsing web management page: http://hadoop-master:8080
 ```
 
 ### What are the differeces from https://github.com/didadidaboom/hadoopset2.1-cluster-docker.git:
-1. added ssh remote connection for a docker
-2. passwd
+1. added ssh remote connection for a docker (port:8022)
+2. passwd (for docker, user:root; pwd:ubuntu)
