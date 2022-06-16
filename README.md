@@ -185,6 +185,24 @@ or check by browsing web management page: http://hadoop-master:8080
 --executor-cores 1 /usr/local/spark/examples/jars/spark-examples_2.12-3.0.1.jar 30
 ```
 
+### run ssh for remote connnection of docker
+##### 1. default setting
+```
+# docker:
+port: 8022
+user:root
+password:ubuntu
+```
+##### 2. start ssh
+```
+/etc/init.d/ssh restart
+```
+##### 3. exit and test
+```
+exit
+ssh root@127.0.0.1 -p 8022
+```
+
 ### What are the differeces from https://github.com/didadidaboom/hadoopset2.1-cluster-docker.git:
 1. added ssh remote connection for a docker (port:8022)
 2. passwd (for docker, user:root; pwd:ubuntu)
