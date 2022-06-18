@@ -145,6 +145,30 @@ Sqoop 1.4.7
 sqoop import --connect jdbc:mysql://hadoop-mysql:3306/test --username root --password hive --table testname -m 1
 ```
 
+##### 3. test connect mysql
+
+```
+sqoop list-databases --connect jdbc:mysql://192.168.19.137:3306/ --username root -P
+```
+
+##### 4. connect mysql
+
+```
+#增量迁移数据
+sqoop import \
+    --connect jdbc:mysql://<ip>/<database-name> \
+    --username xxx \
+    --password xxx \
+    --table <table-name> \
+    --m 4 \
+    --target-dir /user/hive/warehouse/<database-name>.db/<table-name> \
+    --incremental lastmodified \
+    --check-column <check-column> \
+    --merge-key <merge-column> \
+    --last-value <last-time>
+
+```
+
 ### Start spark
 
 ##### 1. Start spark
