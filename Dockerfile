@@ -7,6 +7,7 @@ WORKDIR /root
 # install openssh-server, openjdk and wget
 RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false update && \
     apt-get install -y openssh-server openssh-client openjdk-8-jdk wget vim python3-pip && \
+    pip3 install --upgrade pip && \
     pip3 install jupyter virtualenv && \
     virtualenv -p /usr/bin/python3 reco_sys && \
     echo root:ubuntu|chpasswd && \
